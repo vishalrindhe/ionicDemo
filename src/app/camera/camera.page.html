@@ -5,5 +5,12 @@
 </ion-header>
 
 <ion-content>
+<ion-button (click)="takePic()">Take Pic</ion-button>
+<br>
+<img width="100vh" height="250vh" *ngIf="src != ''" [src]="src" />
+<div> 
+  abc img: 
+<img [src]='abc'>
 
+</div>
 </ion-content>
