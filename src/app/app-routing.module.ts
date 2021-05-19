@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SchedulePage } from './schedule/schedule.page';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    // children: [
+    //   {
+    //     path: 'schedule',
+    //     // children: [
+    //     //   {
+    //     //     path: '',
+    //         // loadChildren: () =>
+    //         // import('./schedule/schedule.module').then(
+    //         //   (m) => m.SchedulePageModule
+    //         component: SchedulePage
+    //         // ),
+    //       // }
+    //     // ]
+    //   },
       // children: [
       //   {
       //     path: 'camera',
@@ -29,14 +44,16 @@ const routes: Routes = [
       //       ),
       //   },
       // ],
-    },
+
+    // ]
+  },
 
   {
     path: '',
-    // redirectTo: 'login',
-    // pathMatch: 'full',
+    redirectTo: 'login',
+    pathMatch: 'full',
     // loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    // loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
     // loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
 
   },
@@ -48,6 +65,11 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+
   
   
 ];

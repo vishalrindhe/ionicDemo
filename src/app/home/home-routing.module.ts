@@ -8,9 +8,22 @@ const routes: Routes = [
   //   component: HomePage 
   // },
   {
-    path: 'home',
+    path: '',
     component: HomePage,
     children: [
+      // {
+      //   path: 'schedule',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: 
+      //        () =>
+      //       import('../schedule/schedule.module').then(
+      //         (m) => m.SchedulePageModule
+      //       ),
+      //     }
+      //   ]
+      // },
       {
         path: 'camera',
         loadChildren: () =>
@@ -33,17 +46,27 @@ const routes: Routes = [
             (m) => m.SchedulePageModule
           ),
       },
+      {
+        path: '',
+        redirectTo: '/home/schedule',
+        pathMatch: 'full'
+      }
     ],
   },
+  // {
+  //   path: '',
+  //   redirectTo: '/home/schedule',
+  //   pathMatch: 'full',
+  //   // loadChildren: () =>
+  //   //       import('../schedule/schedule.module').then(
+  //   //         (m) => m.SchedulePageModule
+  //   //       ),
+  // },
   {
     path: '',
     redirectTo: '/home/schedule',
-    pathMatch: 'full',
-    // loadChildren: () =>
-    //       import('../schedule/schedule.module').then(
-    //         (m) => m.SchedulePageModule
-    //       ),
-  },
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
