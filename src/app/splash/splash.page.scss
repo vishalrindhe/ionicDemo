@@ -1,68 +1,51 @@
-ion-content{
-    page-splash {
-
-        .scroll-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #bars {
-            height: 80%;
-
-            .cls-1 {
-                opacity: 0;
-                transform: rotate3d(1, 1, 0, 50deg);
-                animation: 1s 0.2s ease fadeInAndSpin;
-                animation-fill-mode: forwards;
-            }
-
-            .cls-2 {
-                opacity: 0;
-                transform: rotate3d(1, 1, 0, 50deg);
-                animation: 1s 0.4s ease fadeInAndSpin;
-                animation-fill-mode: forwards;
-            }
-
-            .cls-3 {
-                opacity: 0;
-                transform: rotate3d(1, 1, 0, 50deg);
-                animation: 1s 0.6s ease fadeInAndSpin;
-                animation-fill-mode: forwards;
-            }
-
-            .cls-4 {
-                opacity: 0;
-                transform: rotate3d(1, 1, 0, 50deg);
-                animation: 1s 0.8s ease fadeInAndSpin;
-                animation-fill-mode: forwards;
-            }
-
-            .cls-5, .cls-6 {
-                opacity: 0;
-                animation: 2s 1.5s linear fadeIn;
-                animation-fill-mode: forwards;
-            }
-
-        }
-
-    }
-
+.imgData{
+    margin-top: 60%;
+    
 }
 
-@keyframes fadeInAndSpin {
-
-    100% {
-        opacity: 1;
-        transform: rotate3d(1, 1, 0, 0deg);
-    }
-
+.headColor{
+    color: red !important;
 }
 
-@keyframes fadeIn {
-
-    100% {
-        opacity: 1;
+#head {
+    fill: green;
+ }
+@keyframes rotate  {
+    from {
+      transform: rotate(0deg);
     }
+    to {
+      transform: rotate(360deg);
+    }
+}
 
+@keyframes rotateReverse  {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+}
+
+@keyframes your-rotation-animation-name {
+    0%   { transform: rotate(0deg); }
+    30%  { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #cog1{
+    transform-origin: center center; // Rotate about their own center.
+    transform-box: fill-box;
+    animation: rotate 4s infinite 0s linear; 
+    outline: brown;
+    fill: cadetblue;
+    // Using animation 'rotate' for infinitely long, with a linear speed-curve.
+}
+
+#cog2{
+    transform-origin: center center;
+    transform-box: fill-box;
+    animation: rotateReverse 4s infinite 0.8s linear;
+    fill: brown;
 }
