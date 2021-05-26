@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 
-import { Plugins } from '@capacitor/core';
-import { SplashScreen } from '@ionic-native/splash-screen';
+// import { SplashScreen } from '@ionic-native/splash-screen';
+// import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { Capacitor, Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
 import { Platform } from '@ionic/angular';
 
-const { capacitorSplashScreen } = Plugins;
+const { capacitorSplashScreen} = Plugins;
 // import { SplashScreen } from '@capacitor/splash-screen';
 
 // import { SplashPageModule } from './splash/splash.module';
-// const {SplashScreen} = Plugins
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -18,18 +20,22 @@ const { capacitorSplashScreen } = Plugins;
 })
 export class AppComponent {
   constructor(public router: Router, public platform: Platform) {
-    // this.splashScreen.hide();
+  
     this.initializeApp()
-    
+    Capacitor.Plugins.SplashScreen.hide()
     this.router.navigateByUrl('splash')
 
   }
+
+  
+  
   initializeApp() {
 
     this.platform.ready().then(() => {
 
-      capacitorSplashScreen.hide();
-      SplashScreen.hide();
+      // capacitorSplashScreen.hide();
+      // SplashScreen.hide();
+      // this.splashScreen.hide();
 
 
     });
@@ -37,9 +43,12 @@ export class AppComponent {
   }
   
   ionViewDidEnter() {
+    // this.splashScreen.hide();
 
     // this.splashScreen.hide();
     // SplashScreen.hide()
+    // capacitorSplashScreen.hide();
+    // SplashScreen.hide();
 
   }
 

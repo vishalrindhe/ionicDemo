@@ -7,4 +7,7 @@
 <ion-content>
 <h1>Schedule</h1>
 <ion-button routerLink="/login">Default</ion-button>
+
+<p>Network Status: {{ networkStatus.connected ? 'Online':'Offline' }} {{networkStatus.connectionType}} </p>
+
 </ion-content>

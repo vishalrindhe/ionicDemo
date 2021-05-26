@@ -10,7 +10,7 @@ import { IonTabs } from '@ionic/angular'
 export class HomePage {
   // @ViewChild('tabs', { static: true }) tabs: IonTabs;
   // @ViewChild('tabs') tabs: IonTabs;
-
+  item:boolean
 
   constructor() {
   // this.tabs.select('tab');

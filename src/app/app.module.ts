@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 // import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
+import { ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
