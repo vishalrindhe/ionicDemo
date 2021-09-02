@@ -1,6 +1,9 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
-import { Network, NetworkStatus, Plugins, PluginListenerHandle } from '@capacitor/core';
+import { Network, NetworkStatus, Plugins, PluginListenerHandle, HapticsPlugin } from '@capacitor/core';
+
 // import { setInterval } from 'timers';
+
+const { Haptics } = Plugins;
 
 @Component({
   selector: 'app-schedule',
@@ -38,14 +41,15 @@ export class SchedulePage implements OnInit {
 
   async p(){
     this.networkListener = Network.addListener('networkStatusChange', status => {
-      console.log('Network status changed', status);
+      // console.log('Network status changed', status);
       this.networkStatus = status
-      console.log('abc',this.networkStatus);
+      // console.log('abc',this.networkStatus);
+      
       
     });
   
     this.networkStatus = await Network.getStatus()
-    console.log('status',this.networkStatus);
+    // console.log('status',this.networkStatus);
   
   }
 

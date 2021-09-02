@@ -6,13 +6,14 @@
   "webDir": "www",
   "linuxAndroidStudioPath": "/snap/android-studio/103/android-studio/bin/studio.sh",
   "plugins": {
-    "SplashScreen": {}
+    "SplashScreen": {},
+    "LocalNotifications": {
+      "iconColor": "#488AFF"
+    }
   },
   "cordova": {},
   "server": {
     "url": "http://192.168.0.107:8100",
-    "cleartext": true,
-    "originalUrl": "http://192.168.0.107:8100",
-    "originalCleartext": true
+    "cleartext": true
   }
 }
